@@ -67,7 +67,7 @@ class Utilisateur implements UserInterface
 
     public function setVerifPassword(string $verifPassword): self
     {
-        $this->verifPassword = $verifPassword;
+        $this->verifPassword = password_hash($this->verifPassword, PASSWORD_BCRYPT);
 
         return $this;
     }
@@ -79,7 +79,7 @@ class Utilisateur implements UserInterface
 
     public function setPassword(string $password): self
     {
-        $this->password = $password;
+        $this->password = password_hash($this->password, PASSWORD_BCRYPT);
 
         return $this;
     }
