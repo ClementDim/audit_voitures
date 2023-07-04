@@ -14,3 +14,7 @@ framework:
     #fragments: true
     php_errors:
         log: true
+
+    error_handler:
+        exception_listener: 'kernel.exception'
+        error_controller: 'App\Controller\ErrorController::show'
